@@ -1,0 +1,66 @@
+---
+---
+<section
+  id="hero"
+  class="min-h-screen flex flex-col justify-center px-10 pt-14 max-w-[1100px] mx-auto"
+>
+  <p
+    class="font-mono text-xs text-accent tracking-[0.1em] uppercase mb-6
+           opacity-0 translate-y-2 animate-[fadeUp_0.5s_ease_forwards_0.1s]"
+  >
+    Senior Data Scientist · Hamburg
+  </p>
+
+  <h1
+    class="font-serif text-[clamp(64px,10vw,120px)] font-normal leading-[0.92]
+           tracking-[-0.02em] text-ink
+           opacity-0 translate-y-5 animate-[fadeUp_0.8s_ease_forwards_0.25s]"
+  >
+    André <span class="text-accent">S.</span>
+  </h1>
+
+  <div
+    class="w-full h-px bg-border my-9
+           opacity-0 animate-[fade_0.6s_ease_forwards_0.6s]"
+  >
+  </div>
+
+  <div
+    class="flex flex-col md:flex-row md:items-end md:justify-between gap-10
+           opacity-0 translate-y-3 animate-[fadeUp_0.6s_ease_forwards_0.7s]"
+  >
+    <p class="text-lg md:text-xl font-light text-muted max-w-lg leading-relaxed">
+      Building <strong class="text-ink font-medium">production-grade LLM &amp; RAG systems</strong>
+      — from hybrid retrieval and reranking to evaluation frameworks and monitoring.
+      Currently at Kühne + Nagel, shipping AI for ~8,000 colleagues.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <a
+        href="https://github.com/AndreSoble"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile (opens in new tab)"
+        class="font-mono text-sm px-5 py-2.5 rounded-md bg-ink text-bg border border-ink
+               hover:bg-[#2a2520] transition-colors"
+      >
+        GitHub ↗
+      </a>
+      <a
+        href="#research"
+        class="font-mono text-sm px-5 py-2.5 rounded-md border border-border
+               text-ink hover:bg-surface transition-colors"
+      >
+        Research ↓
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade {
+    to { opacity: 1; }
+  }
+</style>

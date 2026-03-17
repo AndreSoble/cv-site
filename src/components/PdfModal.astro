@@ -1,0 +1,105 @@
+---
+---
+<div
+  id="pdf-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="PDF preview"
+  class="fixed inset-0 z-50 bg-ink/90 hidden flex-col"
+>
+  <div class="flex items-center justify-between px-6 py-3 border-b border-white/10">
+    <span id="modal-title" class="font-mono text-xs text-white/70 truncate max-w-[70%]"></span>
+    <div class="flex gap-3 items-center">
+      <a
+        id="modal-pdf-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-xs text-white/70 hover:text-white border border-white/20 px-3 py-1.5 rounded"
+      >
+        Open PDF ↗
+      </a>
+      <button
+        id="modal-close"
+        aria-label="Close PDF preview"
+        class="font-mono text-xs text-white/70 hover:text-white border border-white/20 px-3 py-1.5 rounded"
+      >
+        ESC ✕
+      </button>
+    </div>
+  </div>
+
+  <div class="flex-1 relative">
+    <iframe
+      id="modal-iframe"
+      src=""
+      title="PDF preview"
+      class="w-full h-full border-0"
+    ></iframe>
+    <div
+      id="modal-fallback"
+      class="absolute inset-0 hidden flex-col items-center justify-center gap-4 text-white"
+    >
+      <p class="font-sans text-sm text-white/70">Could not load PDF preview.</p>
+      <a
+        id="fallback-link"
+        href="#"
+        class="font-mono text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded border border-white/20 transition-colors"
+      >
+        Download PDF instead
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('pdf-modal')!;
+  const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+  const titleEl = document.getElementById('modal-title')!;
+  const pdfLink = document.getElementById('modal-pdf-link') as HTMLAnchorElement;
+  const fallback = document.getElementById('modal-fallback')!;
+  const fallbackLink = document.getElementById('fallback-link') as HTMLAnchorElement;
+  const closeBtn = document.getElementById('modal-close')!;
+  let fallbackTimer: ReturnType<typeof setTimeout>;
+
+  function openModal(pdfPath: string, title: string) {
+    if (window.innerWidth < 768) {
+      window.open(pdfPath, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    titleEl.textContent = title;
+    pdfLink.href = pdfPath;
+    fallbackLink.href = pdfPath;
+    iframe.src = pdfPath;
+    fallback.classList.add('hidden');
+    fallback.classList.remove('flex');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+
+    fallbackTimer = setTimeout(() => {
+      fallback.classList.remove('hidden');
+      fallback.classList.add('flex');
+    }, 10000);
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    iframe.src = '';
+    clearTimeout(fallbackTimer);
+  }
+
+  iframe.addEventListener('load', () => clearTimeout(fallbackTimer));
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  (window as any).openPdfModal = openModal;
+</script>

@@ -1,0 +1,41 @@
+---
+import { experience } from '../data/experience';
+import AnimatedSection from './AnimatedSection';
+---
+
+<section id="experience" class="max-w-[1100px] mx-auto px-10 py-24">
+  <div class="flex items-center gap-3 mb-12">
+    <span class="font-mono text-[11px] text-accent uppercase tracking-[0.1em]">Experience</span>
+    <div class="flex-1 h-px bg-border"></div>
+  </div>
+
+  <div class="flex flex-col">
+    {experience.map((item, i) => (
+      <AnimatedSection delay={i * 0.1} client:visible>
+        <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6 py-8 border-t border-border last:border-b">
+          <div class="pt-0.5">
+            <div class="font-mono text-xs text-muted">{item.period}</div>
+            <div class="text-sm text-muted mt-1">{item.company}</div>
+          </div>
+          <div>
+            <div class="font-serif text-[22px] font-normal tracking-[-0.02em] mb-2.5">
+              {item.role}
+            </div>
+            <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
+              {item.description.map(point => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-1.5">
+              {item.tags.map(tag => (
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded border border-border bg-surface text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    ))}
+  </div>
+</section>

@@ -1,17 +1,32 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Research from '../components/Research.astro';
+import Projects from '../components/Projects.astro';
+import Awards from '../components/Awards.astro';
+import Contact from '../components/Contact.astro';
+import PdfModal from '../components/PdfModal.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Nav />
+  <main>
+    <Hero />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Experience />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Skills />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Research />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Projects />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Awards />
+    <hr class="border-border max-w-[1100px] mx-auto" />
+    <Contact />
+  </main>
+  <PdfModal />
+</Layout>
