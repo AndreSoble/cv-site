@@ -12,8 +12,8 @@ export const skills: SkillGroup[] = [
       'Causal Transformer Decoder', 'Performer (linear attention)', 'Dual Encoder',
       'Sentence Embeddings', 'ANN Search (Annoy, FAISS)',
       'Recommender Systems', 'Active Learning', 'Topic Clustering',
-      'Weights & Biases', 'NVIDIA APEX', 'fairscale', 'DeepSpeed',
-      'Ollama / Mistral 7B', 'pandas', 'numpy', 'plotly',
+      'Weights & Biases', 'fairscale', 'DeepSpeed',
+      'Ollama', 'pandas', 'numpy', 'plotly',
     ],
   },
   {
@@ -42,9 +42,9 @@ export const skills: SkillGroup[] = [
     items: [
       'AWS OpenSearch', 'AWS Lambda', 'AWS S3', 'AWS DynamoDB',
       'AWS Step Functions', 'AWS Bedrock', 'AWS CDK', 'AWS EKS',
-      'AWS AppSync (GraphQL)', 'Amazon Cognito', 'AWS SageMaker',
+      'AWS AppSync (GraphQL)', 'Amazon Cognito',
       'AWS SQS', 'AWS RDS', 'AWS ElastiCache / Valkey',
-      'Kubernetes', 'Docker', 'OVH', 'PostgreSQL', 'MongoDB', 'Redis', 'Snowflake',
+      'Kubernetes', 'Docker', 'OVH', 'PostgreSQL', 'MongoDB', 'Snowflake',
       'GitHub Actions',
     ],
   },
@@ -53,9 +53,9 @@ export const skills: SkillGroup[] = [
     items: [
       'Python', 'TypeScript', 'JavaScript / Node.js', 'Express.js', 'SQL', 'Java',
       'REST API Design', 'GraphQL', 'Microservices', 'Distributed Systems',
-      'FastAPI', 'Observability', 'Caching', 'Fault Tolerance', 'Security & Auth',
+      'FastAPI', 'Security & Auth',
       'ETL / ELT Pipelines', 'Apache Airflow', 'Kubeflow Pipelines',
-      'Alembic', 'Data Quality Pipelines', 'Claude Code',
+      'Alembic', 'Data Quality Pipelines',
     ],
   },
   {
@@ -70,7 +70,8 @@ export const skills: SkillGroup[] = [
   {
     name: 'Team & Delivery',
     items: [
-      'Agile Delivery', 'Scoping & Prioritisation', 'Stakeholder Communication',
+      'Agile Delivery', 'Technical Roadmapping', 'Epic & Issue Planning',
+      'Scoping & Prioritisation', 'Stakeholder Communication',
       'Technical Mentoring', 'Cross-team Coordination', 'Documentation',
     ],
   },

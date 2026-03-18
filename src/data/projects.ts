@@ -1,5 +1,6 @@
 export interface Project {
   name: string;
+  year: number;
   description: string;
   tech: string[];
   url: string;
@@ -9,6 +10,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'interview-agent',
+    year: 2024,
     description:
       'PoC AI interview agent with human-in-the-loop feedback. LangGraph state machine decides per answer whether to clarify, probe, or advance. Streams responses via SSE.',
     tech: ['FastAPI', 'LangGraph', 'Ollama', 'Mistral 7B', 'PostgreSQL', 'Alembic', 'Streamlit', 'Docker', 'GitHub Actions'],
@@ -17,6 +19,7 @@ export const projects: Project[] = [
   },
   {
     name: 'laro',
+    year: 2021,
     description:
       'Implementation of the LARO paper — language-agnostic sentence embeddings from finetuned RoBERTa. Benchmarked on Facebook LASER/Tatoeba v1 dataset.',
     tech: ['PyTorch', 'HuggingFace', 'fairscale', 'wandb', 'laserembeddings', 'Docker'],
@@ -25,6 +28,7 @@ export const projects: Project[] = [
   },
   {
     name: 'PerformerDualEncoder',
+    year: 2021,
     description:
       'Dual encoder using linear-attention Performer architecture to produce language-agnostic embeddings — LaBSE-level cross-lingual quality with linear computational complexity.',
     tech: ['PyTorch', 'HuggingFace', 'DeepSpeed', 'OPUS-100', 'Docker', 'NVIDIA GPU'],
@@ -33,6 +37,7 @@ export const projects: Project[] = [
   },
   {
     name: 'ClusterTransformer',
+    year: 2022,
     description:
       'Published pip package for topic clustering via transformer embeddings and cosine similarity. Supports K-means and agglomerative clustering. Colab & Kaggle notebooks included.',
     tech: ['PyTorch', 'HuggingFace', 'scikit-learn', 'plotly', 'pip package'],
@@ -41,6 +46,7 @@ export const projects: Project[] = [
   },
   {
     name: 'OptimizerComparisonCIFAR10',
+    year: 2021,
     description:
       'Empirical benchmark comparing Adam, LARS, LAMB, SGD, and AdaBelief optimizers on ResNet across CIFAR-10 and CIFAR-100, with plotly visualizations.',
     tech: ['PyTorch', 'torchvision', 'LARS', 'LAMB', 'AdaBelief', 'plotly'],

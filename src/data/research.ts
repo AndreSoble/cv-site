@@ -2,6 +2,7 @@ import type { Link } from './experience';
 
 export interface ResearchItem {
   title: string;
+  titleDE?: string;
   type: string;
   year: number;
   abstract: string;
@@ -31,7 +32,8 @@ export const research: ResearchItem[] = [
     pdfPath: '/pdfs/laro-paper.pdf',
   },
   {
-    title: 'Eine KI die 100 Sprachen versteht',
+    title: 'An AI That Understands 100 Languages',
+    titleDE: 'Eine KI die 100 Sprachen versteht',
     type: 'Poster',
     year: 2021,
     abstract:

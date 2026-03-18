@@ -25,20 +25,75 @@ import AnimatedSection from './AnimatedSection';
             <div class="font-serif text-[22px] font-normal tracking-[-0.02em] mb-2.5">
               {item.role}
             </div>
+
+            {/* English bullets */}
             <div data-lang="en">
-              <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
-                {item.description.map(point => (
-                  <li>{point}</li>
+              <ul class="text-sm text-muted leading-relaxed space-y-0 mb-3.5">
+                {item.description.map((bullet) => (
+                  bullet.detail ? (
+                    <li class="exp-bullet group relative pl-4 py-[3px] -mx-1 px-1 rounded">
+                      <span class="bullet-dot absolute left-[5px] top-[10px] text-border">·</span>
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="bullet-text flex-1">{bullet.text}</span>
+                        <span class="bullet-hint font-mono text-[14px] text-muted flex-shrink-0 transition-all duration-200 leading-none select-none">+</span>
+                      </div>
+                      <div class="bullet-detail">
+                        <div class="overflow-hidden">
+                          <ul class="mt-[5px] mb-[2px] space-y-[2px]">
+                            {bullet.detail.map((item: string) => (
+                              <li class="flex gap-2 text-[12px] text-muted leading-relaxed">
+                                <span class="text-border flex-shrink-0 mt-[3px]">–</span>
+                                <span class="opacity-80">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  ) : (
+                    <li class="relative pl-4 py-[3px]">
+                      <span class="absolute left-[5px] top-[10px] text-border">·</span>
+                      {bullet.text}
+                    </li>
+                  )
                 ))}
               </ul>
             </div>
+
+            {/* German bullets */}
             <div data-lang="de">
-              <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
-                {deExperience[i].description.map(point => (
-                  <li>{point}</li>
+              <ul class="text-sm text-muted leading-relaxed space-y-0 mb-3.5">
+                {deExperience[i].description.map((bullet) => (
+                  bullet.detail ? (
+                    <li class="exp-bullet group relative pl-4 py-[3px] -mx-1 px-1 rounded">
+                      <span class="bullet-dot absolute left-[5px] top-[10px] text-border">·</span>
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="bullet-text flex-1">{bullet.text}</span>
+                        <span class="bullet-hint font-mono text-[14px] text-muted flex-shrink-0 transition-all duration-200 leading-none select-none">+</span>
+                      </div>
+                      <div class="bullet-detail">
+                        <div class="overflow-hidden">
+                          <ul class="mt-[5px] mb-[2px] space-y-[2px]">
+                            {bullet.detail.map((item: string) => (
+                              <li class="flex gap-2 text-[12px] text-muted leading-relaxed">
+                                <span class="text-border flex-shrink-0 mt-[3px]">–</span>
+                                <span class="opacity-80">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  ) : (
+                    <li class="relative pl-4 py-[3px]">
+                      <span class="absolute left-[5px] top-[10px] text-border">·</span>
+                      {bullet.text}
+                    </li>
+                  )
                 ))}
               </ul>
             </div>
+
             <div class="flex flex-wrap gap-1.5">
               {item.tags.map(tag => (
                 <span class="font-mono text-[11px] px-2 py-0.5 rounded border border-border bg-surface text-muted">
@@ -66,3 +121,36 @@ import AnimatedSection from './AnimatedSection';
     ))}
   </div>
 </section>
+
+<style>
+  .exp-bullet .bullet-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .exp-bullet.open .bullet-detail {
+    grid-template-rows: 1fr;
+  }
+  .exp-bullet.open .bullet-hint {
+    color: var(--color-accent, #c4622d);
+  }
+  @media (hover: hover) {
+    .exp-bullet:hover {
+      background: rgba(20,18,16,0.03);
+      border-radius: 4px;
+    }
+    .exp-bullet:hover .bullet-hint {
+      color: var(--color-accent, #c4622d);
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.exp-bullet').forEach(li => {
+    li.addEventListener('click', () => {
+      const isOpen = li.classList.toggle('open');
+      const hint = li.querySelector('.bullet-hint');
+      if (hint) hint.textContent = isOpen ? '−' : '+';
+    });
+  });
+</script>

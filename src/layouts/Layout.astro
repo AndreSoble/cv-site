@@ -91,7 +91,7 @@ const {
     height: 28px;
     opacity: 0.4;
   }
-  a, button { cursor: none; }
+  a, button, .exp-bullet { cursor: none; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -127,7 +127,7 @@ const {
   document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
 
-  document.querySelectorAll('a, button').forEach(el => {
+  document.querySelectorAll('a, button, .exp-bullet').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
   });

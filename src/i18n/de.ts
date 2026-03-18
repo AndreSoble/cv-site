@@ -1,53 +1,140 @@
 // German translations for dynamic content.
 // Domain terms (Data Scientist, RAG, LLM, tech tags) intentionally kept in English.
 
-export const deExperience: { description: string[] }[] = [
+export const deExperience: { description: { text: string; detail?: string[] }[] }[] = [
   {
     // K+N Senior Data Scientist
     description: [
-      'K.AI — unternehmensweite agentische KI-Plattform mit ~8.000 internen Nutzern. Das Team wuchs von einer Handvoll auf ~20 Entwickler in 2 Teams.',
-      'Weiterentwicklung von reinem RAG (Phase 1) zu einem werkzeugnutzenden agentischen System (Phase 2): LangGraph-Orchestrierung, LiteLLM-Abstraktion, MCP mit OAuth.',
-      'AWS-nativer Retrieval-Stack: OpenSearch Hybrid Search, AWS Titan- und Cohere-Embeddings, Cohere Reranking; Deployment via CDK (S3, DynamoDB, Step Functions, Lambda).',
-      'Eigene Dokumentenverarbeitungs-Pipeline mit OCR-Unterstützung; Crawler für Confluence und interne Webseiten — aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten.',
-      'Von RAGAS inspiriertes, selbstentwickeltes Evaluierungsframework — LLM-as-a-judge, kuratierte domänenspezifische Datensätze und Regressionsgates. Monitoring für Adoption, Wissenslücken und Content-Qualität.',
-      'Workspace-Insights-Dashboard: Workspace-Eigentümer (z.B. Team Leads) können Nutzungsmuster ihres Teams verfolgen, Wissenslücken erkennen und verstehen, wie ihr Workspace genutzt wird.',
-      'PII-Pipeline im ELT-Offload ins Data Warehouse implementiert: Gesprächs- und sensible Daten älter als 90 Tage werden beim Offload automatisch gelöscht, um Datenschutzanforderungen zu erfüllen.',
-      'WebSocket-basiertes Streaming implementiert; ElastiCache/Valkey für robustes, fortsetzbares State-Management von LangGraph- und WebSocket-Zuständen; RDS (PostgreSQL) für dauerhafte Gesprächspersistenz.',
+      {
+        text: 'K.AI — unternehmensweite Konversationsplattform, die ~8.000 Mitarbeitenden ermöglicht, mit Unternehmensdaten zu chatten und Wissen im Unternehmen zu finden; de facto Platform-, ML- und Backend-Engineer über den gesamten Stack.',
+        detail: [
+          '3.000–4.000 Anfragen/Tag in Produktion.',
+          'Gestartet auf Basis eines AWS-Blueprints, dann umfassend neu gebaut und erweitert.',
+        ],
+      },
+      {
+        text: 'Technischer Anker von K.AI beim Wachstum des Teams von 5 auf ~20: Roadmap mitgestaltet, Epics aufgebrochen und neue Engineers in zwei Squads eingearbeitet.',
+      },
+      {
+        text: 'Weiterentwicklung von reinem RAG (Phase 1) zu einem agentischen System (Phase 2): LangGraph-Orchestrierung, LiteLLM-Abstraktion, MCP mit OAuth.',
+        detail: [
+          'Phase 1: RAG über interne Wissensdatenbanken; AppSync/GraphQL-API, Cognito + SSO, CDK-Deployment.',
+          'Phase 2: Stateful LangGraph-Orchestrierung — RAG ist ein Werkzeug, das der Agent aufrufen kann, nicht der Standardpfad.',
+          'MCP mit OAuth: eigene MCP-Server gebaut und externe konsumiert; interne K+N-Entwicklerteams befähigt, ihre eigenen Services für K.AI bereitzustellen — die Plattform wird so zum erweiterbaren unternehmensweiten Agenten.',
+        ],
+      },
+      {
+        text: 'AWS-nativer Retrieval-Stack: OpenSearch Hybrid Search, Cohere-Embeddings und Reranking; CDK-Deployment.',
+        detail: [
+          'Eigene Multi-Format-Ingestion-Pipeline: Extraktion von Text und Bildern aus PDFs, DOCX, PPTX, PNG/JPG — OCR auf jeden Bildtyp angewendet, nicht nur auf eingescannte Dokumente.',
+          'Bilder mit OCR-Text und Gemini-generierten Beschreibungen angereichert; Referenzen erhalten, damit das LLM Bilder direkt in seine Antworten einbinden kann.',
+          'Aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten in Produktion; Crawler für Confluence und interne Webseiten.',
+          'AWS Titan + Cohere-Embeddings via Bedrock; S3, DynamoDB, Step Functions, Lambda.',
+        ],
+      },
+      {
+        text: 'Selbstentwickeltes Evaluierungsframework und Workspace-Analytics-Dashboard.',
+        detail: [
+          'Von RAGAS inspiriert, aber eigenentwickelt: LLM-as-a-judge, kuratierte Datensätze, Regressionsgates — nicht auf der RAGAS-Bibliothek aufgebaut.',
+          'Monitoring für Adoption, Wissenslücken und Content-Qualität; genutzt zur Definition von Launch-Kriterien.',
+          'Workspace-Dashboard: Team Leads verfolgen Nutzungsmuster, Wissenslücken und Content-Qualität pro Workspace.',
+        ],
+      },
+      {
+        text: 'Echtzeit-Streaming, fortsetzbares State-Management und Datenschutz-Compliance implementiert.',
+        detail: [
+          'WebSocket-basiertes Streaming-Protokoll für Echtzeit-UX.',
+          'ElastiCache/Valkey für fortsetzbares LangGraph- und WebSocket-State; RDS (PostgreSQL) für dauerhafte Gesprächspersistenz.',
+          'PII-Pipeline im ELT-Offload: Gesprächs- und sensible Daten älter als 90 Tage werden automatisch gelöscht.',
+        ],
+      },
     ],
   },
   {
     // K+N Data Scientist
     description: [
-      'Mehrstufige Business-Partner-Matching-Pipeline gegen Dun & Bradstreet-Daten (via CDQ APIs): Score-Gating → LaBSE Semantic Similarity → Azure OpenAI GPT-4 Turbo Structured Outputs als finaler Fallback.',
-      'Azure OpenAI Provisioned Deployments (PTUs) für höheren Durchsatz konfiguriert; iteratives Prompt Engineering für zuverlässige Structured Outputs; Ground-Truth-Labels erstellt und Requirements-Engineering mit bereichsübergreifenden Stakeholdern durchgeführt.',
-      '92% Kostenreduktion und 98% Precision gegenüber dem manuellen Prozess erzielt. Projekt wurde mit dem CDQ Good Practice Award 2025 ausgezeichnet.',
-      'Tägliche ELT-Pipelines mit Kubeflow Pipelines betrieben.',
+      {
+        text: 'Mehrstufige Business-Partner-Matching-Pipeline zum Anreichern interner K+N-Daten mit Dun & Bradstreet.',
+        detail: [
+          'Dreistufige Hierarchie: CDQ/D&B Score-Gating → LaBSE Kosinus-Ähnlichkeit → Azure OpenAI GPT-4 Turbo Structured Outputs als finaler Fallback.',
+          'Sprachunabhängiger Ansatz (LaBSE) entscheidend für K+Ns internationale Partnerbasis.',
+          'Im Laufe der Zeit ersetzte die GPT-4-Stufe mehrere Zwischenschritte, da sie robuster und wartbarer war.',
+        ],
+      },
+      {
+        text: '92% Kostenreduktion und 98% Precision gegenüber dem manuellen Prozess. Projekt mit dem CDQ Good Practice Award 2025 ausgezeichnet.',
+        detail: [
+          'Azure OpenAI PTUs für höheren Durchsatz; iteratives Prompt Engineering für zuverlässige Structured Outputs.',
+          'Ground-Truth-Labels erstellt; Requirements-Engineering mit bereichsübergreifenden Stakeholdern.',
+          'Als internes Datenprodukt geliefert, das K+N-weit genutzt wird; Auszeichnung nach Andres Wechsel zum nächsten Projekt.',
+        ],
+      },
+      {
+        text: 'Tägliche ELT-Pipelines mit Kubeflow Pipelines — Datenintegration aus Oracle und heterogenen Unternehmenssystemen nach Snowflake.',
+        detail: [
+          'Laden aus Oracle und weiteren internen Quellsystemen nach Snowflake; Transformationen und Datenanreicherung direkt auf Snowflake.',
+          'Zusammenführung von Daten aus K+Ns heterogener IT-Landschaft — über Systemgrenzen, Formate und Verantwortungsbereiche hinweg — zu konsolidierten Business-Partner-Datensätzen.',
+          'Darüber hinaus: Unterstützung weiterer Datenprodukt-Aufgaben rund um Partner-Gruppierungen und verwandte Entitäten.',
+        ],
+      },
     ],
   },
   {
     // moinAI Full-time
     description: [
-      'Übernahme in Festanstellung nach Werkstudium; Full-Stack-Entwicklung: Python (NLP/Modell-Serving) + Node.js / Express / MongoDB.',
-      'Integration von Drittplattformen in moinAI (z.B. Zendesk, zChat, Zapier) sowie Kunden- und Partnersystemen.',
-      'Gesamte Infrastruktur von Heroku auf einen Kubernetes-Cluster bei OVH migriert — von Grund auf aufgebaut, DNS-Umstellung durchgeführt; ~50% Kostenreduktion. GitHub Actions CI/CD eingerichtet.',
-      'KI/NLP-Komponenten weiterentwickelt; wiederholbare Active-Learning-Retraining-Workflows gebaut, um kundenseitige Iterationszyklen zu verkürzen.',
-      'Unüberwachte Intent-Discovery aufgebaut: neue und historische Nutzernachrichten eingebettet und geclustert, Cluster mit bekannten Intents verglichen, um wirklich neue Kategorien zu erkennen — ein Daten-Flywheel für kontinuierliche Modellverbesserung.',
-      'Öffentliche GPT-3-Chatbot-Demo für das OMR Festival entwickelt — flexible Gespräche außerhalb des regelbasierten Ablaufs, noch vor ChatGPT.',
+      {
+        text: 'Übernahme in Festanstellung nach Werkstudium; Full-Stack-Verantwortung über NLP, Backend, Infrastruktur und ML im moinAI-SaaS-Produkt (5 Mio.+ Gespräche, 150+ Unternehmen).',
+      },
+      {
+        text: 'Gesamte Infrastruktur von Heroku auf Kubernetes bei OVH migriert; ~50% Kostenreduktion.',
+        detail: [
+          'Cluster von Grund auf aufgebaut: OVH UI, kubeconfig, alle K8s-Manifests (Deployments, Services, Ingress) für ~5–6 Services.',
+          'DNS-Umstellung von Heroku; GitHub Actions CI/CD-Pipelines eingerichtet.',
+        ],
+      },
+      {
+        text: 'Multi-Channel-Integrationen mit CRM- und Support-Plattformen (Zendesk, zChat, Zapier) sowie Kunden- und Partnersystemen implementiert.',
+      },
+      {
+        text: 'Unüberwachte Intent-Discovery aufgebaut — ein Daten-Flywheel für kontinuierliche Modellverbesserung.',
+        detail: [
+          'Neue und historische Nutzernachrichten eingebettet und geclustert; Cluster mit bekannten Intents verglichen.',
+          'Erkennt wirklich neue Intent-Kategorien, die das Modell noch nicht abdeckt.',
+        ],
+      },
+      {
+        text: 'KI/NLP-Komponenten verantwortet und weiterentwickelt; wiederholbare Active-Learning-Retraining-Workflows gebaut, um kundenseitige Iterationszyklen zu verkürzen.',
+      },
+      {
+        text: 'Öffentliche GPT-3-Chatbot-Demo für das OMR Festival entwickelt — flexible Gespräche außerhalb des regelbasierten Ablaufs, noch vor ChatGPT.',
+      },
     ],
   },
   {
     // moinAI Working Student
     description: [
-      'In-House-NLP-Pipeline (Textklassifikation + Intent-Erkennung) als Ersatz für Google Dialogflow entwickelt — die Eigenentwicklung übertraf Dialogflow damals auf moinAIs Anwendungsfall.',
-      'Experimente mit GPT-2 zur synthetischen Trainingsdaten-Augmentierung. Kontinuierliche Evaluierung aktueller NLP-Forschung auf Anwendbarkeit im Produkt.',
-      'Implementierung und Architektur der KI-Anwendung von knowhere verantwortet.',
+      {
+        text: 'In-House-NLP-Pipeline als Ersatz für Google Dialogflow entwickelt — übertraf Dialogflow auf moinAIs Anwendungsfall.',
+        detail: [
+          'Vollständiger Loop: Training, Evaluation, Hosting und Inferenz.',
+          'Textklassifikation + Intent-Erkennung; GPT-2 zur synthetischen Trainingsdaten-Augmentierung.',
+          'Ermöglichte moinAI, den NLP-Stack selbst zu besitzen statt von einem Drittanbieter abhängig zu sein.',
+        ],
+      },
+      {
+        text: 'Implementierung und Architektur der KI-Anwendung von knowhere verantwortet.',
+      },
     ],
   },
   {
     // ISEC7
     description: [
-      'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts.',
-      'Support-Analyst für BlackBerry UEM; First-Level-Support und Ticketsystem.',
+      {
+        text: 'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts.',
+      },
+      {
+        text: 'Support-Analyst für BlackBerry UEM; First-Level-Support und Ticketsystem.',
+      },
     ],
   },
 ];
