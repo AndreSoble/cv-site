@@ -19,7 +19,7 @@ export const experience: Experience[] = [
     company: 'Kühne + Nagel',
     role: 'Senior Data Scientist',
     description: [
-      'Develop K.AI — a company-wide agentic AI platform used by ~8,000 internal users. Team grew from a handful to ~20 developers across 2 teams.',
+      'Develop K.AI — a company-wide agentic AI platform used by ~8,000 internal users. Team scaled from a handful to ~20 developers across 2 teams.',
       'Evolved platform from pure RAG (Phase 1) to a tool-using agentic system (Phase 2): LangGraph orchestration, LiteLLM abstraction, MCP with OAuth.',
       'Built AWS-native retrieval stack: OpenSearch hybrid search, AWS Titan and Cohere embeddings, Cohere reranking; deployed via CDK (S3, DynamoDB, Step Functions, Lambda).',
       'Custom document processing pipeline with OCR support; crawlers for Confluence and internal websites — currently ~8M chunks across ~5M documents.',

@@ -5,7 +5,7 @@ export const deExperience: { description: string[] }[] = [
   {
     // K+N Senior Data Scientist
     description: [
-      'K.AI — unternehmensweite agentische KI-Plattform mit ~8.000 internen Nutzern. Team wuchs von einer Handvoll auf ~20 Entwickler in 2 Teams.',
+      'K.AI — unternehmensweite agentische KI-Plattform mit ~8.000 internen Nutzern. Das Team wuchs von einer Handvoll auf ~20 Entwickler in 2 Teams.',
       'Weiterentwicklung von reinem RAG (Phase 1) zu einem werkzeugnutzenden agentischen System (Phase 2): LangGraph-Orchestrierung, LiteLLM-Abstraktion, MCP mit OAuth.',
       'AWS-nativer Retrieval-Stack: OpenSearch Hybrid Search, AWS Titan- und Cohere-Embeddings, Cohere Reranking; Deployment via CDK (S3, DynamoDB, Step Functions, Lambda).',
       'Eigene Dokumentenverarbeitungs-Pipeline mit OCR-Unterstützung; Crawler für Confluence und interne Webseiten — aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten.',
