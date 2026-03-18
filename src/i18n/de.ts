@@ -5,9 +5,10 @@ export const deExperience: { description: string[] }[] = [
   {
     // K+N Senior Data Scientist
     description: [
-      'K.AI — unternehmensweite agentische KI-Plattform mit ~8.000 internen Nutzern. Team wuchs von 5–6 auf ~20 Entwickler in 2 Teams.',
+      'K.AI — unternehmensweite agentische KI-Plattform mit ~8.000 internen Nutzern. Team wuchs von einer Handvoll auf ~20 Entwickler in 2 Teams.',
       'Weiterentwicklung von reinem RAG (Phase 1) zu einem werkzeugnutzenden agentischen System (Phase 2): LangGraph-Orchestrierung, LiteLLM-Abstraktion, MCP mit OAuth.',
-      'Aufbau des AWS-nativen Retrieval-Stacks: OpenSearch Hybrid Search, AWS Titan- und Cohere-Embeddings, Cohere Reranking, S3, DynamoDB, Step Functions, Lambda; Deployment via CDK. Eigene Dokumentenverarbeitungs-Pipeline mit OCR-Unterstützung; Crawler für Confluence und interne Webseiten — aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten.',
+      'AWS-nativer Retrieval-Stack: OpenSearch Hybrid Search, AWS Titan- und Cohere-Embeddings, Cohere Reranking; Deployment via CDK (S3, DynamoDB, Step Functions, Lambda).',
+      'Eigene Dokumentenverarbeitungs-Pipeline mit OCR-Unterstützung; Crawler für Confluence und interne Webseiten — aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten.',
       'Von RAGAS inspiriertes, selbst entwickeltes Evaluierungsframework — LLM-as-a-judge, kuratierte domänenspezifische Datensätze und Regressionsgates. Monitoring für Adoption, Wissenslücken und Content-Qualität.',
       'Workspace-Insights-Dashboard: Workspace-Eigentümer (z.B. Team-Leads) können Nutzungsmuster ihres Teams verfolgen, Wissenslücken erkennen und verstehen, wie ihr Workspace genutzt wird.',
       'PII-Entfernungspipeline: Gesprächsdaten älter als 90 Tage werden automatisch anonymisiert, um Datenschutzanforderungen zu erfüllen.',

@@ -19,9 +19,10 @@ export const experience: Experience[] = [
     company: 'Kühne + Nagel',
     role: 'Senior Data Scientist',
     description: [
-      'Develop K.AI — a company-wide agentic AI platform used by ~8,000 internal users. Team grew from 5-6 to ~20 developers across 2 teams.',
+      'Develop K.AI — a company-wide agentic AI platform used by ~8,000 internal users. Team grew from a handful to ~20 developers across 2 teams.',
       'Evolved platform from pure RAG (Phase 1) to a tool-using agentic system (Phase 2): LangGraph orchestration, LiteLLM abstraction, MCP with OAuth.',
-      'Built and scaled AWS-native retrieval stack: OpenSearch hybrid search, AWS Titan and Cohere embeddings, Cohere reranking, S3, DynamoDB, Step Functions, Lambda; deployed via CDK. Custom document processing pipeline with OCR support; crawlers for Confluence and internal websites — currently ~8M chunks across ~5M documents.',
+      'Built AWS-native retrieval stack: OpenSearch hybrid search, AWS Titan and Cohere embeddings, Cohere reranking; deployed via CDK (S3, DynamoDB, Step Functions, Lambda).',
+      'Custom document processing pipeline with OCR support; crawlers for Confluence and internal websites — currently ~8M chunks across ~5M documents.',
       'Designed production evaluation framework inspired by RAGAS — custom LLM-as-a-judge, curated domain datasets, and regression gates. Built monitoring for adoption, search gaps, and content health.',
       'Built workspace insights dashboard: workspace owners (e.g. team leads) can track team usage patterns, identify knowledge gaps in their knowledge base, and understand how their workspace is being used.',
       'Implemented PII removal pipeline: conversation data older than 90 days is automatically anonymised to meet privacy requirements.',
