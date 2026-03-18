@@ -1,6 +1,7 @@
 ---
 import { research } from '../data/research';
 import AnimatedSection from './AnimatedSection';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="research" class="max-w-[1100px] mx-auto px-10 pb-24">
@@ -38,13 +39,13 @@ import AnimatedSection from './AnimatedSection';
               class="font-mono text-[11px] px-3 py-1.5 rounded border bg-ink text-bg
                      border-ink hover:bg-[#2a2520] transition-colors hidden md:block
                      cursor-pointer"
-              onclick={`window.openPdfModal('${item.pdfPath}', '${item.title.replace(/'/g, "\\'")}')`}
+              onclick={`window.openPdfModal('${base}${item.pdfPath}', '${item.title.replace(/'/g, "\\'")}')`}
               aria-label={`Preview: ${item.title}`}
             >
               Preview
             </button>
             <a
-              href={item.pdfPath}
+              href={base + item.pdfPath}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Open PDF: ${item.title} (opens in new tab)`}
