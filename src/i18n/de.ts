@@ -57,7 +57,6 @@ export const deExperience: { description: { text: string; detail?: string[] }[] 
         text: 'Mehrstufige Business-Partner-Matching-Pipeline zum Anreichern interner K+N-Daten mit Dun & Bradstreet.',
         detail: [
           'Dreistufige Hierarchie: CDQ/D&B Score-Gating → LaBSE Kosinus-Ähnlichkeit → Azure OpenAI GPT-4 Turbo Structured Outputs als finaler Fallback.',
-          'Sprachunabhängiger Ansatz (LaBSE) entscheidend für K+Ns internationale Partnerbasis.',
           'Im Laufe der Zeit ersetzte die GPT-4-Stufe mehrere Zwischenschritte, da sie robuster und wartbarer war.',
         ],
       },
@@ -83,13 +82,13 @@ export const deExperience: { description: { text: string; detail?: string[] }[] 
     // moinAI Full-time
     description: [
       {
-        text: 'Übernahme in Festanstellung nach Werkstudium; Full-Stack-Verantwortung über NLP, Backend, Infrastruktur und ML im moinAI-SaaS-Produkt (5 Mio.+ Gespräche, 150+ Unternehmen).',
+        text: 'Full-Stack-Verantwortung über NLP, Backend, Infrastruktur und ML im moinAI-SaaS-Produkt (5 Mio.+ Gespräche, 150+ Unternehmen).',
       },
       {
         text: 'Gesamte Infrastruktur von Heroku auf Kubernetes bei OVH migriert; ~50% Kostenreduktion.',
         detail: [
-          'Cluster von Grund auf aufgebaut: OVH UI, kubeconfig, alle K8s-Manifests (Deployments, Services, Ingress) für ~5–6 Services.',
-          'DNS-Umstellung von Heroku; GitHub Actions CI/CD-Pipelines eingerichtet.',
+          'Vollständige Migration von Heroku (keine Infrastruktur) zu OVH Infrastructure-as-a-Service verantwortet.',
+          'GitHub Actions CI/CD-Pipelines mit Deployment auf Kubernetes bei OVH eingerichtet.',
         ],
       },
       {
@@ -130,7 +129,7 @@ export const deExperience: { description: { text: string; detail?: string[] }[] 
     // ISEC7
     description: [
       {
-        text: 'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts.',
+        text: 'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts; enge Zusammenarbeit mit Entwicklern im Kanban-Workflow.',
       },
       {
         text: 'Support-Analyst für BlackBerry UEM; First-Level-Support und Ticketsystem.',
