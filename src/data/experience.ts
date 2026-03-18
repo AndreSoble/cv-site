@@ -108,6 +108,9 @@ export const experience: Experience[] = [
     role: 'Software Developer / ML Specialist',
     description: [
       {
+        text: 'Full-stack scope across NLP, backend, infrastructure, and ML on the moinAI SaaS product (5M+ conversations, 150+ companies).',
+      },
+      {
         text: 'Migrated entire infrastructure from Heroku to Kubernetes on OVH — ~50% cost reduction.',
         detail: [
           'Owned full migration from Heroku (no infrastructure) to OVH infrastructure-as-a-service.',
@@ -158,7 +161,7 @@ export const experience: Experience[] = [
     role: 'Working Student — QA & Support',
     description: [
       {
-        text: 'QA for the ISEC7 EMM Suite (enterprise mobility management & monitoring) across Android and iOS device rollout.',
+        text: 'QA for the ISEC7 EMM Suite (enterprise mobility management & monitoring) across Android and iOS device rollout; close collaboration with developers in a Kanban workflow.',
       },
       {
         text: 'Support analyst for BlackBerry UEM; first-level end-user support and ticketing system.',

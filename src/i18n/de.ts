@@ -82,6 +82,9 @@ export const deExperience: { description: { text: string; detail?: string[] }[] 
     // moinAI Full-time
     description: [
       {
+        text: 'Full-Stack-Verantwortung über NLP, Backend, Infrastruktur und ML im moinAI-SaaS-Produkt (5 Mio.+ Gespräche, 150+ Unternehmen).',
+      },
+      {
         text: 'Gesamte Infrastruktur von Heroku auf Kubernetes bei OVH migriert; ~50% Kostenreduktion.',
         detail: [
           'Vollständige Migration von Heroku (keine Infrastruktur) zu OVH Infrastructure-as-a-Service verantwortet.',
@@ -126,7 +129,7 @@ export const deExperience: { description: { text: string; detail?: string[] }[] 
     // ISEC7
     description: [
       {
-        text: 'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts.',
+        text: 'QA für die ISEC7 EMM Suite (Enterprise Mobility Management & Monitoring) im Rahmen des Android- und iOS-Geräte-Rollouts; enge Zusammenarbeit mit Entwicklern im Kanban-Workflow.',
       },
       {
         text: 'Support-Analyst für BlackBerry UEM; First-Level-Support und Ticketsystem.',
