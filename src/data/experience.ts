@@ -25,7 +25,7 @@ export const experience: Experience[] = [
       'Custom document processing pipeline with OCR support; crawlers for Confluence and internal websites — currently ~8M chunks across ~5M documents.',
       'Designed production evaluation framework inspired by RAGAS — custom LLM-as-a-judge, curated domain datasets, and regression gates. Built monitoring for adoption, search gaps, and content health.',
       'Built workspace insights dashboard: workspace owners (e.g. team leads) can track team usage patterns, identify knowledge gaps in their knowledge base, and understand how their workspace is being used.',
-      'Implemented PII removal pipeline: conversation data older than 90 days is automatically anonymised to meet privacy requirements.',
+      'Implemented PII pipeline in the ELT data warehouse offload: conversation and sensitive data older than 90 days is automatically deleted to meet privacy requirements.',
       'Implemented WebSocket-based streaming protocol; ElastiCache/Valkey for robust, resumable LangGraph and WebSocket state; RDS (PostgreSQL) for durable conversation persistence.',
     ],
     tags: ['RAG', 'LangGraph', 'LiteLLM', 'MCP', 'AWS Bedrock', 'Google Vertex AI', 'OpenSearch', 'Cohere', 'AWS CDK', 'EKS', 'AppSync', 'Cognito', 'ElastiCache', 'RAGAS', 'LLM-as-judge', 'WebSocket'],
@@ -36,7 +36,7 @@ export const experience: Experience[] = [
     role: 'Data Scientist',
     description: [
       'Built a multi-step business partner matching pipeline against Dun & Bradstreet data (via CDQ APIs): score gating → LaBSE semantic similarity → Azure OpenAI GPT-4 Turbo structured outputs as final fallback.',
-      'Provisioned Azure OpenAI deployments (PTUs) for higher throughput; iterative prompt engineering for reliable structured outputs; created ground-truth labels and drove requirements engineering with stakeholders across finance, procurement, and data governance.',
+      'Provisioned Azure OpenAI deployments (PTUs) for higher throughput; iterative prompt engineering for reliable structured outputs; created ground-truth labels and drove requirements engineering with cross-functional stakeholders.',
       'Achieved 92% cost reduction and 98% precision vs. the prior manual workflow. Project recognised with the CDQ Good Practice Award 2025.',
       'Operated daily ELT pipelines on Kubeflow Pipelines.',
     ],
@@ -48,7 +48,7 @@ export const experience: Experience[] = [
     company: 'moinAI (knowhere GmbH)',
     role: 'Software Developer / ML Specialist',
     description: [
-      'Expanded scope to full-stack engineering after promotion from working student: Python (NLP/model serving) + Node.js / Express / MongoDB backend.',
+      'Promoted from working student to full-time; took on full-stack engineering: Python (NLP/model serving) + Node.js / Express / MongoDB.',
       'Integrated third-party platforms into moinAI (e.g. Zendesk, zChat, Zapier) as well as customer and partner systems.',
       'Migrated entire infrastructure from Heroku to a Kubernetes cluster on OVH — provisioned from scratch (kubeconfig, all K8s manifests), cut over DNS; ~50% infrastructure cost reduction. Set up GitHub Actions CI/CD.',
       'Maintained and extended AI/NLP components; built repeatable active learning retraining workflows to reduce per-customer iteration cycles.',
@@ -64,7 +64,7 @@ export const experience: Experience[] = [
     description: [
       'Researched and built an in-house NLP pipeline (text classification + intent recognition) to replace Google Dialogflow — surpassed Dialogflow\'s performance on moinAI\'s use case at the time.',
       'Experimented with GPT-2 for synthetic training data augmentation. Continuously evaluated state-of-the-art NLP research for applicability to the product.',
-      'Co-responsible for implementation and architecture of the knowhere AI application.',
+      'Owned implementation and architecture of the knowhere AI application.',
     ],
     tags: ['NLP', 'Text Classification', 'Intent Discovery', 'Clustering', 'BERT', 'Transformers', 'GPT-2', 'Active Learning', 'Python'],
   },
@@ -74,7 +74,7 @@ export const experience: Experience[] = [
     role: 'Working Student — QA & Support',
     description: [
       'QA for the ISEC7 EMM Suite (enterprise mobility management & monitoring) across Android and iOS device rollout.',
-      'Support analyst for BlackBerry UEM; first-level end-user support and ticket system.',
+      'Support analyst for BlackBerry UEM; first-level end-user support and ticketing system.',
     ],
     tags: ['QA', 'Enterprise Mobility', 'BlackBerry UEM', 'Android', 'iOS'],
   },

@@ -9,25 +9,25 @@ export const deExperience: { description: string[] }[] = [
       'Weiterentwicklung von reinem RAG (Phase 1) zu einem werkzeugnutzenden agentischen System (Phase 2): LangGraph-Orchestrierung, LiteLLM-Abstraktion, MCP mit OAuth.',
       'AWS-nativer Retrieval-Stack: OpenSearch Hybrid Search, AWS Titan- und Cohere-Embeddings, Cohere Reranking; Deployment via CDK (S3, DynamoDB, Step Functions, Lambda).',
       'Eigene Dokumentenverarbeitungs-Pipeline mit OCR-Unterstützung; Crawler für Confluence und interne Webseiten — aktuell ~8 Mio. Chunks aus ~5 Mio. Dokumenten.',
-      'Von RAGAS inspiriertes, selbst entwickeltes Evaluierungsframework — LLM-as-a-judge, kuratierte domänenspezifische Datensätze und Regressionsgates. Monitoring für Adoption, Wissenslücken und Content-Qualität.',
-      'Workspace-Insights-Dashboard: Workspace-Eigentümer (z.B. Team-Leads) können Nutzungsmuster ihres Teams verfolgen, Wissenslücken erkennen und verstehen, wie ihr Workspace genutzt wird.',
-      'PII-Entfernungspipeline: Gesprächsdaten älter als 90 Tage werden automatisch anonymisiert, um Datenschutzanforderungen zu erfüllen.',
-      'WebSocket-basiertes Streaming implementiert; ElastiCache/Valkey für robustes, resumable LangGraph- und WebSocket-State-Management; RDS (PostgreSQL) für dauerhafte Gesprächspersistenz.',
+      'Von RAGAS inspiriertes, selbstentwickeltes Evaluierungsframework — LLM-as-a-judge, kuratierte domänenspezifische Datensätze und Regressionsgates. Monitoring für Adoption, Wissenslücken und Content-Qualität.',
+      'Workspace-Insights-Dashboard: Workspace-Eigentümer (z.B. Team Leads) können Nutzungsmuster ihres Teams verfolgen, Wissenslücken erkennen und verstehen, wie ihr Workspace genutzt wird.',
+      'PII-Pipeline im ELT-Offload ins Data Warehouse implementiert: Gesprächs- und sensible Daten älter als 90 Tage werden beim Offload automatisch gelöscht, um Datenschutzanforderungen zu erfüllen.',
+      'WebSocket-basiertes Streaming implementiert; ElastiCache/Valkey für robustes, fortsetzbares State-Management von LangGraph- und WebSocket-Zuständen; RDS (PostgreSQL) für dauerhafte Gesprächspersistenz.',
     ],
   },
   {
     // K+N Data Scientist
     description: [
       'Mehrstufige Business-Partner-Matching-Pipeline gegen Dun & Bradstreet-Daten (via CDQ APIs): Score-Gating → LaBSE Semantic Similarity → Azure OpenAI GPT-4 Turbo Structured Outputs als finaler Fallback.',
-      'Azure OpenAI Provisioned Deployments (PTUs) für höheren Durchsatz konfiguriert; iteratives Prompt Engineering für zuverlässige Structured Outputs; Ground-Truth-Labels erstellt und Requirements-Engineering mit Stakeholdern aus Finance, Procurement und Data Governance betrieben.',
+      'Azure OpenAI Provisioned Deployments (PTUs) für höheren Durchsatz konfiguriert; iteratives Prompt Engineering für zuverlässige Structured Outputs; Ground-Truth-Labels erstellt und Requirements-Engineering mit bereichsübergreifenden Stakeholdern durchgeführt.',
       '92% Kostenreduktion und 98% Precision gegenüber dem manuellen Prozess erzielt. Projekt wurde mit dem CDQ Good Practice Award 2025 ausgezeichnet.',
-      'Tägliche ELT-Pipelines auf Kubeflow Pipelines betrieben.',
+      'Tägliche ELT-Pipelines mit Kubeflow Pipelines betrieben.',
     ],
   },
   {
     // moinAI Full-time
     description: [
-      'Vollständige Full-Stack-Entwicklung nach Übernahme in Festanstellung: Python (NLP/Modell-Serving) + Node.js / Express / MongoDB.',
+      'Übernahme in Festanstellung nach Werkstudium; Full-Stack-Entwicklung: Python (NLP/Modell-Serving) + Node.js / Express / MongoDB.',
       'Integration von Drittplattformen in moinAI (z.B. Zendesk, zChat, Zapier) sowie Kunden- und Partnersystemen.',
       'Gesamte Infrastruktur von Heroku auf einen Kubernetes-Cluster bei OVH migriert — von Grund auf aufgebaut, DNS-Umstellung durchgeführt; ~50% Kostenreduktion. GitHub Actions CI/CD eingerichtet.',
       'KI/NLP-Komponenten weiterentwickelt; wiederholbare Active-Learning-Retraining-Workflows gebaut, um kundenseitige Iterationszyklen zu verkürzen.',
@@ -40,7 +40,7 @@ export const deExperience: { description: string[] }[] = [
     description: [
       'In-House-NLP-Pipeline (Textklassifikation + Intent-Erkennung) als Ersatz für Google Dialogflow entwickelt — die Eigenentwicklung übertraf Dialogflow damals auf moinAIs Anwendungsfall.',
       'Experimente mit GPT-2 zur synthetischen Trainingsdaten-Augmentierung. Kontinuierliche Evaluierung aktueller NLP-Forschung auf Anwendbarkeit im Produkt.',
-      'Mitverantwortlich für Implementierung und Architektur der KI-Anwendung von knowhere.',
+      'Implementierung und Architektur der KI-Anwendung von knowhere verantwortet.',
     ],
   },
   {
@@ -93,7 +93,7 @@ export const deSkillGroupNames: Record<string, string> = {
   'LLM Providers': 'LLM-Anbieter',
   'Cloud / Infrastructure': 'Cloud / Infrastruktur',
   'Evaluation / Responsible AI': 'Evaluation / Verantwortungsvolle KI',
-  'Team & Delivery': 'Team & Lieferung',
+  'Team & Delivery': 'Team & Delivery',
   'Languages': 'Sprachen',
 };
 

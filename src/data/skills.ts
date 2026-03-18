@@ -24,18 +24,17 @@ export const skills: SkillGroup[] = [
       'MCP (Model Context Protocol)', 'OAuth for MCP',
       'Tool / Function Calling', 'Prompt Engineering',
       'Context Management', 'Multi-Agent Patterns',
-      'RAGAS', 'LLM-as-judge', 'Groundedness & Faithfulness Evaluation',
       'WebSocket', 'SSE (Server-Sent Events)',
     ],
   },
   {
     name: 'LLM Providers',
     items: [
+      'Claude (Anthropic)',
       'OpenAI GPT-3 / GPT-4',
       'Azure OpenAI (incl. Provisioned Deployments / PTUs)',
-      'Google Gemini (Vertex AI)',
-      'AWS Bedrock (Claude, Cohere)',
-      'Claude Code',
+      'Google Gemini',
+      'Cohere',
     ],
   },
   {
@@ -56,7 +55,7 @@ export const skills: SkillGroup[] = [
       'REST API Design', 'GraphQL', 'Microservices', 'Distributed Systems',
       'FastAPI', 'Observability', 'Caching', 'Fault Tolerance', 'Security & Auth',
       'ETL / ELT Pipelines', 'Apache Airflow', 'Kubeflow Pipelines',
-      'Alembic', 'Data Quality Pipelines',
+      'Alembic', 'Data Quality Pipelines', 'Claude Code',
     ],
   },
   {
