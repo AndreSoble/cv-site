@@ -79,7 +79,6 @@ export const experience: Experience[] = [
         text: 'Built multi-step business partner matching pipeline to enrich K+N\'s internal data against Dun & Bradstreet.',
         detail: [
           'Three-stage hierarchy: CDQ/D&B score gating → LaBSE cosine similarity → Azure OpenAI GPT-4 Turbo structured outputs as final fallback.',
-          'Language-agnostic approach (LaBSE) critical for K+N\'s international partner base.',
           'Over time, the GPT-4 stage replaced several intermediate steps as it proved more robust and maintainable.',
         ],
       },
@@ -109,13 +108,10 @@ export const experience: Experience[] = [
     role: 'Software Developer / ML Specialist',
     description: [
       {
-        text: 'Promoted from working student to full-time; full-stack scope across NLP, backend, infrastructure, and ML on the moinAI SaaS product (5M+ conversations, 150+ companies).',
-      },
-      {
         text: 'Migrated entire infrastructure from Heroku to Kubernetes on OVH — ~50% cost reduction.',
         detail: [
-          'Provisioned cluster from scratch: OVH UI, kubeconfig, all K8s manifests (Deployments, Services, Ingress) for ~5–6 services.',
-          'Cut over DNS from Heroku; set up GitHub Actions CI/CD pipelines.',
+          'Owned full migration from Heroku (no infrastructure) to OVH infrastructure-as-a-service.',
+          'Set up GitHub Actions CI/CD pipelines with deployment to Kubernetes on OVH.',
         ],
       },
       {
