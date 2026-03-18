@@ -10,7 +10,7 @@ export const projects: Project[] = [
   {
     name: 'interview-agent',
     description:
-      'Production-ready AI interview agent with human-in-the-loop feedback. LangGraph state machine decides per answer whether to clarify, probe, or advance. Streams responses via SSE.',
+      'PoC AI interview agent with human-in-the-loop feedback. LangGraph state machine decides per answer whether to clarify, probe, or advance. Streams responses via SSE.',
     tech: ['FastAPI', 'LangGraph', 'Ollama', 'Mistral 7B', 'PostgreSQL', 'Alembic', 'Streamlit', 'Docker', 'GitHub Actions'],
     url: 'https://github.com/AndreSoble/interview-agent',
     language: 'Python',

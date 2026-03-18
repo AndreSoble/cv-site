@@ -1,11 +1,15 @@
 ---
 import { experience } from '../data/experience';
+import { deExperience } from '../i18n/de';
 import AnimatedSection from './AnimatedSection';
 ---
 
 <section id="experience" class="max-w-[1100px] mx-auto px-10 py-24">
   <div class="flex items-center gap-3 mb-12">
-    <span class="font-mono text-[11px] text-accent uppercase tracking-[0.1em]">Experience</span>
+    <span class="font-mono text-[11px] text-accent uppercase tracking-[0.1em]">
+      <span data-lang="en">Experience</span>
+      <span data-lang="de">Berufserfahrung</span>
+    </span>
     <div class="flex-1 h-px bg-border"></div>
   </div>
 
@@ -21,11 +25,20 @@ import AnimatedSection from './AnimatedSection';
             <div class="font-serif text-[22px] font-normal tracking-[-0.02em] mb-2.5">
               {item.role}
             </div>
-            <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
-              {item.description.map(point => (
-                <li>{point}</li>
-              ))}
-            </ul>
+            <div data-lang="en">
+              <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
+                {item.description.map(point => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+            <div data-lang="de">
+              <ul class="text-sm text-muted leading-relaxed space-y-1.5 mb-3.5 list-disc list-inside">
+                {deExperience[i].description.map(point => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
             <div class="flex flex-wrap gap-1.5">
               {item.tags.map(tag => (
                 <span class="font-mono text-[11px] px-2 py-0.5 rounded border border-border bg-surface text-muted">
@@ -33,6 +46,20 @@ import AnimatedSection from './AnimatedSection';
                 </span>
               ))}
             </div>
+            {item.links && (
+              <div class="flex flex-wrap gap-2 mt-3">
+                {item.links.map(link => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-mono text-[11px] text-accent hover:underline"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </AnimatedSection>

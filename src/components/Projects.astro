@@ -1,5 +1,6 @@
 ---
 import { projects } from '../data/projects';
+import { deProjects } from '../i18n/de';
 import AnimatedSection from './AnimatedSection';
 ---
 
@@ -24,7 +25,10 @@ import AnimatedSection from './AnimatedSection';
             <span class="font-mono text-sm font-medium text-ink">{project.name}</span>
             <span class="font-mono text-xs text-muted group-hover:text-ink transition-colors">↗</span>
           </div>
-          <p class="text-sm text-muted leading-relaxed mb-4 flex-1">{project.description}</p>
+          <div class="text-sm text-muted leading-relaxed mb-4 flex-1">
+            <span data-lang="en">{project.description}</span>
+            <span data-lang="de">{deProjects[i]}</span>
+          </div>
           <div class="flex flex-wrap gap-1.5">
             {project.tech.map(t => (
               <span class="font-mono text-[10px] px-2 py-0.5 rounded border border-border bg-bg text-muted">

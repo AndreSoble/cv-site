@@ -11,6 +11,11 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Anti-flash: restore saved language before paint -->
+    <script is:inline>
+      const l = localStorage.getItem('lang');
+      if (l === 'de') document.documentElement.lang = 'de';
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -101,6 +106,10 @@ const {
     body, a, button { cursor: auto; }
     #cursor { display: none; }
   }
+
+  /* i18n */
+  html:not([lang="de"]) [data-lang="de"],
+  html[lang="de"] [data-lang="en"] { display: none; }
 </style>
 
 <script>
@@ -143,4 +152,13 @@ const {
   }
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
+
+  // Language toggle (desktop + mobile)
+  function toggleLang() {
+    const next = document.documentElement.lang === 'de' ? 'en' : 'de';
+    document.documentElement.lang = next;
+    localStorage.setItem('lang', next);
+  }
+  document.getElementById('lang-toggle')?.addEventListener('click', toggleLang);
+  document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLang);
 </script>

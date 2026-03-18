@@ -1,12 +1,16 @@
 ---
 import { research } from '../data/research';
+import { deResearch } from '../i18n/de';
 import AnimatedSection from './AnimatedSection';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="research" class="max-w-[1100px] mx-auto px-10 pb-24">
   <div class="flex items-center gap-3 mb-12">
-    <span class="font-mono text-[11px] text-accent uppercase tracking-[0.1em]">Research &amp; Works</span>
+    <span class="font-mono text-[11px] text-accent uppercase tracking-[0.1em]">
+      <span data-lang="en">Research &amp; Works</span>
+      <span data-lang="de">Forschung &amp; Publikationen</span>
+    </span>
     <div class="flex-1 h-px bg-border"></div>
   </div>
 
@@ -18,14 +22,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <div class="font-mono text-xs text-muted pt-1">{item.year}</div>
           <div>
             <div class="font-mono text-[10px] text-accent uppercase tracking-[0.1em] mb-1.5">
-              {item.type}
+              <span data-lang="en">{item.type}</span>
+              <span data-lang="de">{deResearch[i].type}</span>
             </div>
             <div class="font-serif text-lg font-normal tracking-[-0.01em] leading-snug mb-2">
               {item.title}
             </div>
-            <p class="text-sm text-muted leading-relaxed line-clamp-2 mb-3">
-              {item.abstract}
-            </p>
+            <div data-lang="en">
+              <p class="text-sm text-muted leading-relaxed line-clamp-2 mb-3">
+                {item.abstract}
+              </p>
+            </div>
+            <div data-lang="de">
+              <p class="text-sm text-muted leading-relaxed line-clamp-2 mb-3">
+                {deResearch[i].abstract}
+              </p>
+            </div>
             <div class="flex flex-wrap gap-1.5">
               {item.tech.map(t => (
                 <span class="font-mono text-[10px] px-2 py-0.5 rounded border border-border bg-surface text-muted">
@@ -42,7 +54,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               onclick={`window.openPdfModal('${base}${item.pdfPath}', '${item.title.replace(/'/g, "\\'")}')`}
               aria-label={`Preview: ${item.title}`}
             >
-              Preview
+              <span data-lang="en">Preview</span>
+              <span data-lang="de">Vorschau</span>
             </button>
             <a
               href={base + item.pdfPath}
@@ -54,18 +67,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             >
               PDF ↗
             </a>
-            {item.externalUrl && (
+            {item.links?.map(link => (
               <a
-                href={item.externalUrl}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Repository link for: ${item.title} (opens in new tab)`}
+                aria-label={`${link.label}: ${item.title} (opens in new tab)`}
                 class="font-mono text-[11px] px-3 py-1.5 rounded border border-border
                        text-muted bg-surface hover:text-ink hover:border-muted transition-colors"
               >
-                Repo ↗
+                {link.labelDE ? (
+                  <>
+                    <span data-lang="en">{link.label}</span>
+                    <span data-lang="de">{link.labelDE}</span>
+                  </>
+                ) : link.label}
               </a>
-            )}
+            ))}
           </div>
         </div>
       </AnimatedSection>

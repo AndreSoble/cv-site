@@ -1,5 +1,6 @@
 ---
 import { skills } from '../data/skills';
+import { deSkillGroupNames, deLanguageItems } from '../i18n/de';
 ---
 
 <section id="skills" class="max-w-[1100px] mx-auto px-10 pb-24">
@@ -9,13 +10,21 @@ import { skills } from '../data/skills';
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-    {skills.map(group => (
+    {skills.map((group) => (
       <div>
         <div class="font-mono text-[11px] text-accent uppercase tracking-[0.1em] mb-3">
-          {group.name}
+          <span data-lang="en">{group.name}</span>
+          <span data-lang="de">{deSkillGroupNames[group.name] ?? group.name}</span>
         </div>
         <div class="text-sm text-ink leading-[1.9]">
-          {group.items.join(' · ')}
+          {group.name === 'Languages' ? (
+            <>
+              <span data-lang="en">{group.items.join(' · ')}</span>
+              <span data-lang="de">{deLanguageItems.join(' · ')}</span>
+            </>
+          ) : (
+            group.items.join(' · ')
+          )}
         </div>
       </div>
     ))}

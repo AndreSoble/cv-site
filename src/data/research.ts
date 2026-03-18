@@ -1,3 +1,5 @@
+import type { Link } from './experience';
+
 export interface ResearchItem {
   title: string;
   type: string;
@@ -5,7 +7,7 @@ export interface ResearchItem {
   abstract: string;
   tech: string[];
   pdfPath: string;
-  externalUrl?: string;
+  links?: Link[];
 }
 
 export const research: ResearchItem[] = [
@@ -14,10 +16,10 @@ export const research: ResearchItem[] = [
     type: 'Master Thesis',
     year: 2022,
     abstract:
-      'Language-agnostic, sequence-based recommender generalising to cold-start articles, trained on 313M+ pageviews. User history represented as time-series of embeddings fed into a causal transformer decoder. Validated via A/B-tested CTR as primary KPI.',
-    tech: ['PyTorch', 'PyTorch Lightning', 'LaBSE', 'Annoy', 'Weights & Biases', 'pandas'],
+      'Language-agnostic sequence-based recommender trained on 823K articles and 313M+ pageviews from German news portals. User reading history encoded as a time-series of LaBSE embeddings (768-dim, 109 languages) fed into a GPT2-based causal transformer decoder (85.9M params) that predicts the next article embedding as a regression task. Retrieved via Annoy ANN search. Trained on 4× A100-SXM4 GPUs for ~47h using fairscale and LAMB optimizer. Validated via A/B testing on 4 live news portals (262K pageviews) with CTR as primary KPI.',
+    tech: ['PyTorch', 'PyTorch Lightning', 'LaBSE', 'GPT-2', 'Annoy', 'fairscale', 'LAMB', 'Weights & Biases', 'pandas'],
     pdfPath: '/pdfs/master-thesis.pdf',
-    externalUrl: 'https://reposit.haw-hamburg.de/handle/20.500.12738/16167',
+    links: [{ label: 'Publication ↗', labelDE: 'Publikation ↗', url: 'https://reposit.haw-hamburg.de/handle/20.500.12738/16167' }],
   },
   {
     title: 'Building LARO: Language Agnostic Sentence Embeddings from Finetuned RoBERTa',
@@ -49,11 +51,11 @@ export const research: ResearchItem[] = [
   {
     title: 'Text Classification via BERT-based Text Splitting Controlled by a Search Algorithm',
     type: 'Bachelor Thesis',
-    year: 2019,
+    year: 2020,
     abstract:
-      'BERT-based text-splitting strategy guided by a search algorithm to improve classification performance on long documents beyond the standard 512-token limit.',
-    tech: ['BERT', 'HuggingFace', 'Python', 'Text Classification'],
+      'Novel BFS-based algorithm that searches all possible split positions of an input text, scoring each candidate split via BERT\'s Next Sentence Prediction. The split with the lowest continuation probability — indicating a natural topic boundary — is selected, and each segment is classified independently. Designed for colloquial/informal text (chatbot messages) where regex splitters fail. Improves standalone classifier accuracy and F1 by up to 10% on a 51-class opinion dataset. Uses bert-large-cased (340M params) for splitting and a BERT+GRU+Linear classifier for intent recognition.',
+    tech: ['BERT', 'HuggingFace', 'Flair', 'PyTorch', 'GRU', 'Next Sentence Prediction', 'Python', 'Text Classification'],
     pdfPath: '/pdfs/bachelor-thesis.pdf',
-    externalUrl: 'https://reposit.haw-hamburg.de/handle/20.500.12738/14496',
+    links: [{ label: 'Publication ↗', url: 'https://reposit.haw-hamburg.de/handle/20.500.12738/14496' }],
   },
 ];

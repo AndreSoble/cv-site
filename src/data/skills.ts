@@ -21,6 +21,7 @@ export const skills: SkillGroup[] = [
     items: [
       'RAG', 'Hybrid Search', 'Reranking', 'Vector Search',
       'LangChain', 'LangGraph', 'LiteLLM',
+      'MCP (Model Context Protocol)', 'OAuth for MCP',
       'Tool / Function Calling', 'Prompt Engineering',
       'Context Management', 'Multi-Agent Patterns',
       'RAGAS', 'LLM-as-judge', 'Groundedness & Faithfulness Evaluation',
@@ -31,9 +32,9 @@ export const skills: SkillGroup[] = [
     name: 'LLM Providers',
     items: [
       'OpenAI GPT-3 / GPT-4',
-      'Azure OpenAI',
+      'Azure OpenAI (incl. Provisioned Deployments / PTUs)',
       'Google Gemini (Vertex AI)',
-      'Claude (AWS Bedrock)',
+      'AWS Bedrock (Claude, Cohere)',
       'Claude Code',
     ],
   },
@@ -42,16 +43,17 @@ export const skills: SkillGroup[] = [
     items: [
       'AWS OpenSearch', 'AWS Lambda', 'AWS S3', 'AWS DynamoDB',
       'AWS Step Functions', 'AWS Bedrock', 'AWS CDK', 'AWS EKS',
-      'AWS SageMaker', 'AWS SQS', 'AWS RDS', 'AWS ElastiCache / Valkey',
-      'Kubernetes', 'Docker', 'OVH', 'PostgreSQL', 'Redis', 'Snowflake',
+      'AWS AppSync (GraphQL)', 'Amazon Cognito', 'AWS SageMaker',
+      'AWS SQS', 'AWS RDS', 'AWS ElastiCache / Valkey',
+      'Kubernetes', 'Docker', 'OVH', 'PostgreSQL', 'MongoDB', 'Redis', 'Snowflake',
       'GitHub Actions',
     ],
   },
   {
     name: 'Backend & Data Engineering',
     items: [
-      'Python', 'TypeScript', 'JavaScript / Node.js', 'SQL', 'Java',
-      'REST API Design', 'Microservices', 'Distributed Systems',
+      'Python', 'TypeScript', 'JavaScript / Node.js', 'Express.js', 'SQL', 'Java',
+      'REST API Design', 'GraphQL', 'Microservices', 'Distributed Systems',
       'FastAPI', 'Observability', 'Caching', 'Fault Tolerance', 'Security & Auth',
       'ETL / ELT Pipelines', 'Apache Airflow', 'Kubeflow Pipelines',
       'Alembic', 'Data Quality Pipelines',
