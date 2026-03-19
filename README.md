@@ -1,3 +1,5 @@
+Deployed here: https://andresoble.github.io/cv-site/
+
 # Astro Starter Kit: Minimal
 
 ```sh
