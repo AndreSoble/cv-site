@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="flex flex-col">
     {research.map((item, i) => (
       <AnimatedSection delay={i * 0.08} client:visible>
-        <div class="grid grid-cols-1 md:grid-cols-[80px_1fr_auto] gap-6 items-start
+        <div class="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-6 items-start
                     py-7 border-t border-border last:border-b">
           <div class="font-mono text-xs text-muted pt-1">{item.year}</div>
           <div>
@@ -43,52 +43,52 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 {deResearch[i].abstract}
               </p>
             </div>
-            <div class="flex flex-wrap gap-1.5">
+            <div class="flex flex-wrap gap-1.5 mb-3">
               {item.tech.map(t => (
                 <span class="font-mono text-[10px] px-2 py-0.5 rounded border border-border bg-surface text-muted">
                   {t}
                 </span>
               ))}
             </div>
-          </div>
-          <div class="flex gap-2 pt-0.5 flex-shrink-0">
-            <button
-              class="font-mono text-[11px] px-3 py-1.5 rounded border bg-ink text-bg
-                     border-ink hover:bg-[#2a2520] transition-colors hidden md:block
-                     cursor-pointer"
-              onclick={`window.openPdfModal('${base}${item.pdfPath}', '${item.title.replace(/'/g, "\\'")}')`}
-              aria-label={`Preview: ${item.title}`}
-            >
-              <span data-lang="en">Preview</span>
-              <span data-lang="de">Vorschau</span>
-            </button>
-            <a
-              href={base + item.pdfPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open PDF: ${item.title} (opens in new tab)`}
-              class="font-mono text-[11px] px-3 py-1.5 rounded border border-border
-                     text-muted bg-surface hover:text-ink hover:border-muted transition-colors"
-            >
-              PDF ↗
-            </a>
-            {item.links?.map(link => (
+            <div class="flex items-center gap-3">
+              <button
+                class="font-mono text-[11px] text-accent hover:opacity-70 transition-opacity cursor-pointer bg-transparent border-none p-0 hidden md:block"
+                onclick={`window.openPdfModal('${base}${item.pdfPath}', '${item.title.replace(/'/g, "\\'")}')`}
+                aria-label={`Preview: ${item.title}`}
+              >
+                <span data-lang="en">Preview ↗</span>
+                <span data-lang="de">Vorschau ↗</span>
+              </button>
+              <span class="font-mono text-[11px] text-border hidden md:block">·</span>
               <a
-                href={link.url}
+                href={base + item.pdfPath}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${link.label}: ${item.title} (opens in new tab)`}
-                class="font-mono text-[11px] px-3 py-1.5 rounded border border-border
-                       text-muted bg-surface hover:text-ink hover:border-muted transition-colors"
+                aria-label={`Open PDF: ${item.title} (opens in new tab)`}
+                class="font-mono text-[11px] text-accent hover:opacity-70 transition-opacity"
               >
-                {link.labelDE ? (
-                  <>
-                    <span data-lang="en">{link.label}</span>
-                    <span data-lang="de">{link.labelDE}</span>
-                  </>
-                ) : link.label}
+                PDF ↗
               </a>
-            ))}
+              {item.links?.map(link => (
+                <>
+                  <span class="font-mono text-[11px] text-border">·</span>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${link.label}: ${item.title} (opens in new tab)`}
+                    class="font-mono text-[11px] text-accent hover:opacity-70 transition-opacity"
+                  >
+                    {link.labelDE ? (
+                      <>
+                        <span data-lang="en">{link.label} ↗</span>
+                        <span data-lang="de">{link.labelDE} ↗</span>
+                      </>
+                    ) : `${link.label} ↗`}
+                  </a>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       </AnimatedSection>
