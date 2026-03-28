@@ -168,6 +168,7 @@ export const deResearch: { type: string; abstract: string }[] = [
 
 export const deProjects: string[] = [
   'PoC KI-Interview-Agent mit Human-in-the-Loop-Feedback. LangGraph-Zustandsmaschine entscheidet per Antwort: nachfragen, vertiefen oder weitergehen. Streaming via SSE.',
+  'GPT-2-basierter Chatbot mit REST API, Web-UI und öffentlichem Deployment — entwickelt 2019, im selben Jahr wie die Veröffentlichung von GPT-2, mehr als drei Jahre vor ChatGPT.',
   'Implementierung des LARO-Papers — sprachunabhängige Satzeinbettungen aus feinabgestimmtem RoBERTa. Benchmark auf Facebook LASER/Tatoeba v1.',
   'Dual Encoder mit linearer Attention (Performer-Architektur) für sprachunabhängige Einbettungen — LaBSE-Qualität mit linearer Rechenkomplexität.',
   'Veröffentlichtes pip-Paket für Topic Clustering via Transformer-Einbettungen und Kosinusähnlichkeit. Unterstützt K-Means und agglomeratives Clustering. Colab & Kaggle Notebooks inklusive.',

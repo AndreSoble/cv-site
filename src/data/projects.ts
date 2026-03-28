@@ -18,6 +18,15 @@ export const projects: Project[] = [
     language: 'Python',
   },
   {
+    name: 'chatbot',
+    year: 2019,
+    description:
+      'GPT-2 based chatbot with REST API, web UI, and live public deployment — built in 2019, the same year OpenAI released GPT-2, more than three years before ChatGPT.',
+    tech: ['Python', 'GPT-2', 'REST API', 'Docker', 'JavaScript'],
+    url: 'https://github.com/AndreKoepke/chatbot',
+    language: 'Python',
+  },
+  {
     name: 'laro',
     year: 2021,
     description:
